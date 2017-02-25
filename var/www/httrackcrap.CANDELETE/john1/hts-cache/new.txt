@@ -1,0 +1,3 @@
+date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
+20:04:51	242/242	---M--	301	error ('Moved%20Permanently')	text/html	date:Thu,%2029%20Sep%202016%2010:04:48%20GMT	http://nsihighered.com/robots.txt		(from )
+20:04:51	232/232	---M--	301	error ('Moved%20Permanently')	text/html	date:Thu,%2029%20Sep%202016%2010:04:49%20GMT	http://nsihighered.com/	/root/websites/john1/nsihighered.com/index.html	(from )

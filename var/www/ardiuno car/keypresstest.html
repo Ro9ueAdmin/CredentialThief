@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Keypress test</title>
+<style> <!-- css script here -->
+h1 {
+    background-color: #6495ed;
+}
+
+p {
+    background-color: #e0ffff;
+}
+
+div {
+    background-color: #b0c4de;
+}
+
+img {
+    border: 1px solid red;
+}
+</style>
+<script> <!-- call php script here -->
+function sendKey(str) {
+    if (str.length == 0) { 
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+            }
+        }
+        xmlhttp.open("GET", "keypresstest.php?q=" + str, true);
+        xmlhttp.send();
+    }
+}
+</script>
+</head>
+<body>
+<h1>JavaScript Keypress Test</h1>
+<p>Press a key and let's see what happens...</p>
+<p id="keyPressValue">Keypress Result: Nothing yet...</p>
+<p id="randomArea">Area for random number goes here...</p>
+<p id="lightSwitch">Lightswitch on,off etc...</p>
+
+<div id="arrowsArea">
+<img id="blankArrow" src="media/blank.jpg"></img>
+<img id="upArrow" src="media/up.jpg"></img>
+<img id="blankArrow" src="media/blank.jpg"></img>
+</br>
+<img id="leftArrow" src="media/left.jpg"></img>
+<img id="downArrow" src="media/down.jpg"></img>
+<img id="rightArrow" src="media/right.jpg"></img>
+
+<hr>
+
+<p id="txtHint">txtHint area</p>
+
+</div>
+
+<script> <!-- page js key listenerner script here -->
+document.addEventListener('keydown', function(event) {
+	document.getElementById("keyPressValue").innerHTML = "Keypress Result: " + event.keyCode + " (keyCode)";
+	document.getElementById("randomArea").innerHTML = "Area for random number goes here... " + Math.floor((Math.random() * 100) + 1) + ".";
+	document.getElementById("lightSwitch").style.backgroundColor = "red";
+	var $text = "Button pushed was keyCode " + event.keyCode; // keyCodes are w=87,a=65,s=83,d=68, up=38, left=37, down=40, right=39.
+	if(event.keyCode == 38 || event.keyCode == 87) { <!-- up, sends output to file/serial upon -->
+		document.getElementById("upArrow").style.border = "5px solid red";
+		sendKey("f");
+    }
+	if(event.keyCode == 37 || event.keyCode == 65) { <!-- left, sends output to file/serial lefton -->
+		document.getElementById("leftArrow").style.border = "5px solid red";
+		sendKey("l");
+    }
+	if(event.keyCode == 40 || event.keyCode == 83) { <!-- down, sends output to file/serial downon -->
+		document.getElementById("downArrow").style.border = "5px solid red";
+		sendKey("b");
+    }
+	if(event.keyCode == 39 || event.keyCode == 68) { <!-- right, sends output to file/serial righton -->
+		document.getElementById("rightArrow").style.border = "5px solid red";
+		sendKey("r");
+    }
+});
+document.addEventListener('keyup', function(event) {
+	document.getElementById("lightSwitch").style.backgroundColor = "blue";
+	if(event.keyCode == 38 || event.keyCode == 87) { <!-- up, sends output to file/serial upoff -->
+		document.getElementById("upArrow").style.border = "1px solid red";
+		sendKey("g");
+    }
+	if(event.keyCode == 37 || event.keyCode == 65) { <!-- left, sends output to file/serial leftoff -->
+		document.getElementById("leftArrow").style.border = "1px solid red";
+		sendKey("m");
+    }
+	if(event.keyCode == 40 || event.keyCode == 83) { <!-- down, sends output to file/serial downoff -->
+		document.getElementById("downArrow").style.border = "1px solid red";
+		sendKey("c");
+    }
+	if(event.keyCode == 39 || event.keyCode == 68) { <!-- right, sends output to file/serial rightoff -->
+		document.getElementById("rightArrow").style.border = "1px solid red";
+		sendKey("s");
+	}
+});
+</script>
+</body>
+</html>
+

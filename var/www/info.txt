@@ -1,0 +1,8 @@
+Local IPs are:
+192.168.1.114 and 192.168.42.1 
+
+
+Harvester Filename is:
+harvester_2016-09-29 19:29:53.733901.txt
+
+
